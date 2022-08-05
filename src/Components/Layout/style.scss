@@ -1,6 +1,12 @@
 @import "./src/Shared/helper";
 
 .Layout-Left{
+  height: 100vh;
+  width: px(335);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color:#2C2E2F ;
   .Layout-Logo{
     background-color: #2C2E2F;
     width: px(335);
@@ -21,13 +27,73 @@
     position: fixed;
     left: 0;
     top: px(100);
-    overflow: auto;
+    overflow-y: auto;
+    transition: all .3s;
+    .Layout-Items-li-many:hover{
+      background-color: #1F2122;
+      transition: all .6s;
+    }
+    .Layout-Items-li-many{
+      width: 100%;
+      height:px(270);
+      transition: all .3s;
+      background-color: #1F2122;
+      display: none;
+      transition: all .4s;
+      .inspiration-many{
+        width: 100%;
+        li:hover{
+          color: white;
+          background-color: #2C2E30;
+          transition: all .4s;
+        }
+        li{
+          list-style: none;
+          width: 100%;
+          height: px(90);
+          display: flex;
+          align-items: center;
+          color: #B2B8BE;
+          padding-left: px(88);
+          font-size: 14px;
+        }
+      }
+    }
     li{
+      position: static;
       width: 100%;
       height: px(90);
+      display: flex;
+      align-items: center;
+
+      .inspiration-many-youjiantou{
+        margin-left: px(80);
+        font-size: 16px;
+        transition: all .4s;
+      }
+      i{
+        color: #B2B8BE;
+        font-size: 24px;
+        margin-left: px(30);
+        font-weight: 600;
+      }
+      span{
+        color: #B2B8BE;
+        font-size: 14px;
+        margin-left: px(20);
+        font-weight: 500;
+      }
+
     }
     li:hover{
       background-color: #232526;
+      cursor: pointer;
+      i{
+        color: #ffffff;
+      }
+      span{
+        color: #ffffff;
+      }
     }
   }
   .Layout-Items::-webkit-scrollbar{
@@ -56,5 +122,19 @@
     bottom: 0;
     height: px(100);
     border-top: 2px solid #383A3B;
+    display: flex;
+    align-items: center;
+    i{
+      color: #B2B8BE;
+      font-size: 24px;
+      margin-left: px(30);
+      font-weight: 600;
+    }
+    span{
+      color: #B2B8BE;
+      font-size: 14px;
+      margin-left: px(20);
+      font-weight: 500;
+    }
   }
 }
