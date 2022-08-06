@@ -1,5 +1,6 @@
 import React ,{useState}from 'react';
 import "./style.scss"
+import Logo from "../../assets/Logo.jpg"
 
 const Layout = () => {
     const [isShowInsp,setIsShowInsp]=useState(false)
@@ -37,7 +38,7 @@ const Layout = () => {
     return (
         <div className="Layout-Left">
             <div className="Layout-Logo">
-                <h1>前端导航网站</h1>
+                <img src={Logo} alt=""/>
             </div>
             <ul className="Layout-Items">
                 <li >
