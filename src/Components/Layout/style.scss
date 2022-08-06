@@ -32,14 +32,16 @@
     .Layout-Items-li-many:hover{
       background-color: #1F2122;
       transition: all .6s;
+      height:px(270);
+      display: block;
     }
     .Layout-Items-li-many{
       width: 100%;
-      height:px(270);
-      transition: all .3s;
+      height:px(90);
       background-color: #1F2122;
       display: none;
       transition: all .4s;
+      overflow: hidden;
       .inspiration-many{
         width: 100%;
         li:hover{
@@ -48,6 +50,7 @@
           transition: all .4s;
         }
         li{
+          user-select: none;
           list-style: none;
           width: 100%;
           height: px(90);
@@ -56,6 +59,55 @@
           color: #B2B8BE;
           padding-left: px(88);
           font-size: 14px;
+          a:hover{
+            color: white;
+            transition: all .4s;
+          }
+          a{
+            text-decoration: none;
+            color: #B2B8BE;
+          }
+        }
+      }
+    }
+    .ShowMaterial:hover{
+      background-color: #1F2122;
+      transition: all 1s;
+      height:px(810);
+      display: block;
+    }
+    .ShowMaterial{
+      width: 100%;
+      height:px(90);
+      background-color: #1F2122;
+      display: none;
+      transition: all .4s;
+      overflow: hidden;
+      .ShowMaterial-ul{
+        width: 100%;
+        li:hover{
+          color: white;
+          background-color: #2C2E30;
+          transition: all .4s;
+        }
+        li{
+          user-select: none;
+          list-style: none;
+          width: 100%;
+          height: px(90);
+          display: flex;
+          align-items: center;
+          color: #B2B8BE;
+          padding-left: px(88);
+          font-size: 14px;
+          a:hover{
+            color: white;
+            transition: all .4s;
+          }
+          a{
+            text-decoration: none;
+            color: #B2B8BE;
+          }
         }
       }
     }
@@ -65,34 +117,44 @@
       height: px(90);
       display: flex;
       align-items: center;
-
-      .inspiration-many-youjiantou{
-        margin-left: px(80);
-        font-size: 16px;
-        transition: all .4s;
+      a{
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        span{
+          color: #B2B8BE;
+          font-size: 14px;
+          margin-left: px(20);
+          font-weight: 500;
+        }
+        i{
+          color: #B2B8BE;
+          font-size: 24px;
+          margin-left: px(30);
+          font-weight: 600;
+        }
+        .inspiration-many-youjiantou{
+          margin-left: px(80);
+          font-size: 16px;
+        }
+        .Material-many-youjiantou{
+          margin-left: px(80);
+          font-size: 16px;
+        }
       }
-      i{
-        color: #B2B8BE;
-        font-size: 24px;
-        margin-left: px(30);
-        font-weight: 600;
-      }
-      span{
-        color: #B2B8BE;
-        font-size: 14px;
-        margin-left: px(20);
-        font-weight: 500;
-      }
-
     }
     li:hover{
       background-color: #232526;
       cursor: pointer;
+      transition: all 0.3s;
       i{
         color: #ffffff;
+        transition: all 0.6s;
       }
       span{
+        user-select: none;
         color: #ffffff;
+        transition: all 0.6s;
       }
     }
   }
@@ -124,6 +186,9 @@
     border-top: 2px solid #383A3B;
     display: flex;
     align-items: center;
+    a{
+      text-decoration: none;
+    }
     i{
       color: #B2B8BE;
       font-size: 24px;
