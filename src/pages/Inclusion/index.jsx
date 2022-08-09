@@ -3,7 +3,7 @@ import "./style.scss"
 import Layout from "../../Components/Layout/index.jsx";
 import TopNav from "../../Components/TopNav/index.jsx";
 
-const FirstPage = () => {
+const Inclusion = () => {
     return (
         <div>
             <Layout/>
@@ -13,4 +13,4 @@ const FirstPage = () => {
     );
 };
 
-export default FirstPage;
+export default Inclusion;
