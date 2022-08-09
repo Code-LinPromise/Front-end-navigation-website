@@ -34,18 +34,15 @@
     top: px(100);
     overflow-y: auto;
     transition: all .3s;
-    .Layout-Items-li-many:hover{
-      background-color: #1F2122;
-      transition: all .6s;
+    #Layout-Items-li-many-hover{
       height:px(270);
-      display: block;
+
     }
     .Layout-Items-li-many{
       width: 100%;
-      height:px(90);
+      height:0rem;
       background-color: #1F2122;
-      display: none;
-      transition: all .4s;
+      transition: all 0.5s;
       overflow: hidden;
       .inspiration-many{
         width: 100%;
@@ -75,18 +72,15 @@
         }
       }
     }
-    .ShowMaterial:hover{
-      background-color: #1F2122;
+    #ShowMaterial-hover{
       transition: all 1s;
       height:px(810);
-      display: block;
     }
     .ShowMaterial{
       width: 100%;
-      height:px(90);
+      height:0;
       background-color: #1F2122;
-      display: none;
-      transition: all .4s;
+      transition: all 1s;
       overflow: hidden;
       .ShowMaterial-ul{
         width: 100%;
