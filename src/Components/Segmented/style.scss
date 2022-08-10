@@ -14,7 +14,7 @@ $height: 35px;
     list-style: none;
     width: 250px;
     border-radius: 15px;
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
     height: $height;
     background-color: rgb(224, 224, 224);
     padding: 1px;
@@ -33,7 +33,7 @@ $height: 35px;
     }
 
     .active {
-      background-color: rgb(241, 64, 75);
+      background-color: rgb(67, 63, 77);
       position: absolute;
       width: 33.33%;
       text-align: center;
