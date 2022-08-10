@@ -1,0 +1,54 @@
+@import "./src/Shared/helper";
+
+.TopNav{
+  width:85vw;
+  height: px(100);
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: px(335);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #999999;
+  justify-content: space-between;
+  overflow: hidden;
+  .CityAndWeather{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    span{
+      color: #888888;
+      margin-left: px(50);
+      user-select: none;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    span:hover{
+      color:#b3d4fc;
+      transition: all 0.3s;
+    }
+  }
+  .FontAndSearch{
+    margin-right: px(50);
+    display: flex;
+    align-items: center;
+    strong{
+      margin-right: px(50);
+      display: inline-block;
+      user-select: none;
+
+    }
+    .TopNav-sousuo{
+      font-weight: 600;
+      font-size: 24px;
+      color:#888888 ;
+      cursor: pointer;
+    }
+    .TopNav-sousuo:hover{
+      transition: all 0.5s;
+      color: #F1404B;
+    }
+  }
+
+}
