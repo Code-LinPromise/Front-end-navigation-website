@@ -2,7 +2,7 @@ import React from "react";
 
 import "./style.scss"
 
-const TopNav = () =>{
+const Segmented = () =>{
     return(
         <div id="app">
 	            <ul>
@@ -15,3 +15,4 @@ const TopNav = () =>{
         </div>
     )
 }
+export default Segmented;
