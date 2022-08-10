@@ -47,7 +47,9 @@
       .inspiration-many{
         width: 100%;
         li:hover{
-          color: white;
+          a{
+            color: white;
+          }
           background-color: #2C2E30;
           transition: all .4s;
         }
@@ -85,7 +87,9 @@
       .ShowMaterial-ul{
         width: 100%;
         li:hover{
-          color: white;
+          a{
+            color: white;
+          }
           background-color: #2C2E30;
           transition: all .4s;
         }

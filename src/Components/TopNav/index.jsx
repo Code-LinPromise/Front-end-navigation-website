@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import "./style.scss"
 import axios from "../../utils/request.js"
+import moment from "moment"
 
 const TopNav = () => {
     const [cityName,setCityName]=useState("")
@@ -8,6 +9,8 @@ const TopNav = () => {
     const [locationCode,setLocationCode]=useState()
     const [temperature,setTemperature]=useState()
     const [randomFont,setRandomFont]=useState("")
+    const [humidity,setHumidity]=useState()
+    const [nowTime,setNowTime]=useState("")
     const FontArray=[
         "人不光是靠他生来就拥有一切，而是靠他从学习中所得到的一切来造就自己。",
         "生命在闪耀中现出绚烂，在平凡中现出真实。",
@@ -30,6 +33,11 @@ const TopNav = () => {
                 break;
         }
     }
+    useEffect(()=>{
+        let timer=setInterval(()=>{
+            setNowTime(moment().format('YYYY-MM-DD HH:mm:ss'))
+        },1000)
+    },[])
     useEffect(()=>{
         setRandomFont(FontArray[randomNum(0,FontArray.length-1)])
     },[])
@@ -59,6 +67,7 @@ const TopNav = () => {
                         console.log(res.data)
                         setWeather(res.data.lives[0].weather)
                         setTemperature(res.data.lives[0].temperature)
+                        setHumidity(res.data.lives[0].humidity)
                     }
                 }
             )
@@ -67,15 +76,17 @@ const TopNav = () => {
     return (
         <div className="TopNav">
             <div className="CityAndWeather" >
+                <span>{nowTime}</span>
                 <span>
                 {cityName}
-            </span>
+                </span>
                 <span>
                 {weather}
-            </span>
+                </span>
                 <span>
                 {temperature}℃
-            </span>
+                </span>
+                <span>空气湿度:{humidity}</span>
             </div>
 
             <div className="FontAndSearch">
