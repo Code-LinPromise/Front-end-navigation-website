@@ -137,7 +137,7 @@ const Layout = () => {
                 </li>
             </ul>
             <div className="Layout-Record">
-                <a href="javascrpit:;">
+                <a href="/include">
                     <i className="iconfont icon-ceshishenqing"></i>
                     <span>申请收录</span>
                 </a>
