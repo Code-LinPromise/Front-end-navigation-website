@@ -1,16 +1,9 @@
 import React,{useEffect,useState} from 'react';
 import "./style.scss"
-import axios from "../../utils/request.js"
-import moment from "moment"
+import {randomNum} from "../../utils/RandomFunction.js"
 
 const TopNav = () => {
-    const [cityName,setCityName]=useState("")
-    const [weather,setWeather]=useState("")
-    const [locationCode,setLocationCode]=useState()
-    const [temperature,setTemperature]=useState()
     const [randomFont,setRandomFont]=useState("")
-    const [humidity,setHumidity]=useState()
-    const [nowTime,setNowTime]=useState("")
     const FontArray=[
         "人不光是靠他生来就拥有一切，而是靠他从学习中所得到的一切来造就自己。",
         "生命在闪耀中现出绚烂，在平凡中现出真实。",
@@ -20,81 +13,50 @@ const TopNav = () => {
         "天行健 君子以自强不惜 地势坤 君子以厚德载物",
         "对昨天的悔恨最终只是囚禁了今天和明天。"
     ]
-    function randomNum(minNum,maxNum){
-        switch(arguments.length){
-            case 1:
-                return parseInt(Math.random()*minNum+1,10);
-                break;
-            case 2:
-                return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10);
-                break;
-            default:
-                return 0;
-                break;
-        }
-    }
-    useEffect(()=>{
-        let timer=setInterval(()=>{
-            setNowTime(moment().format('YYYY-MM-DD HH:mm:ss'))
-        },1000)
-    },[])
+
     useEffect(()=>{
         setRandomFont(FontArray[randomNum(0,FontArray.length-1)])
     },[])
+
     useEffect(()=>{
-        fetch("http://restapi.amap.com/v3/ip?key=ecd5d16775bf07f839595840bd630cd0").then((res)=>{
-            if(res.ok){
-                res.text().then((data)=>{
-                    const detail=JSON.parse(data)
-                    setCityName(detail.city)
-                    setLocationCode(detail.adcode)
-                })
+        window.WIDGET={
+            "CONFIG": {
+                "modules": "01234",
+                "background": "5",
+                "tmpColor": "888888",
+                "tmpSize": "16",
+                "cityColor": "888888",
+                "citySize": "16",
+                "aqiColor": "FF9900",
+                "aqiSize": "16",
+                "weatherIconSize": "24",
+                "alertIconSize": "18",
+                "padding": "10px 10px 10px 10px",
+                "shadow": "0",
+                "language": "auto",
+                "fixed": "false",
+                "vertical": "top",
+                "horizontal": "left",
+                "key": "888b69b5741c42e8a53c6e002682147c"
             }
-        }).catch((res)=>{
-            console.log(res.status);
-        });
-        if(locationCode){
-            axios.get("https://restapi.amap.com/v3/weather/weatherInfo?parameters"
-                , {
-                    params: {
-                        city:locationCode,
-                        key:"ecd5d16775bf07f839595840bd630cd0",
-                    }
-                }
-            ).then(
-                function (res){
-                    if(res.status===200){
-                        console.log(res.data)
-                        setWeather(res.data.lives[0].weather)
-                        setTemperature(res.data.lives[0].temperature)
-                        setHumidity(res.data.lives[0].humidity)
-                    }
-                }
-            )
         }
-    },[locationCode])
+        const script = document.createElement('script')
+        script.setAttribute('src', "https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0")
+        document.body.append(script)
+    },[])
     return (
-        <div className="TopNav">
-            <div className="CityAndWeather" >
-                <span>{nowTime}</span>
-                <span>
-                {cityName}
-                </span>
-                <span>
-                {weather}
-                </span>
-                <span>
-                {temperature}℃
-                </span>
-                <span>空气湿度:{humidity}</span>
+        <div className="TopNavAll">
+            <div className="TopNav">
+                <div className="CityAndWeather">
+                    <div id="he-plugin-simple"  ></div>
+                    <a className="iconfont icon-github Weather-GitHub" href="https://github.com/Code-LinPromise/Front-end-navigation-website" target="_blank"></a>
+                </div>
+                <div className="FontAndSearch">
+                    <strong>{randomFont}</strong>
+                    <span className="iconfont icon-sousuo TopNav-sousuo"></span>
+                </div>
             </div>
 
-            <div className="FontAndSearch">
-                <strong>{randomFont}</strong>
-                <span className="iconfont icon-sousuo TopNav-sousuo"></span>
-            </div>
-
-            
         </div>
     );
 };
