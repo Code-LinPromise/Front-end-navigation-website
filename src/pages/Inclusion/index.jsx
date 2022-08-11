@@ -3,8 +3,8 @@ import "./style.scss"
 import Layout from "../../Components/Layout/index.jsx";
 import TopNav from "../../Components/TopNav/index.jsx";
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
-import { message, Upload ,Input,Col, Row} from 'antd';
-
+import { message, Upload, Input, Col, Row, Button } from 'antd';
+const { TextArea } = Input;
 const getBase64 = (img, callback) => {
     const reader = new FileReader();
     reader.addEventListener('load', () => callback(reader.result));
@@ -72,7 +72,7 @@ const Inclusion = () => {
                 <div className='applyContain'>
 
                     <div className='applymainPage'>
-                        <div>网站图标：</div>
+                        <div className='webIcon'>网站图标：</div>
                         <Upload
                             name="avatar"
                             listType="picture-card"
@@ -94,23 +94,37 @@ const Inclusion = () => {
                                 uploadButton
                             )}
                         </Upload>
-                        <Row gutter={16}>
-                            <Col span={12}>
-                                <Input></Input>
-                            </Col>
-                            <Col span={12}>
-                                <Input></Input>
-                            </Col>
-                        </Row>
-                        <Row gutter={16}>
-                            <Col span={12}>
-                                <Input></Input>
-                            </Col>
-                            <Col span={12}>
-                                <Input></Input>
-                            </Col>
-                        </Row>
 
+                        <Row className='row' gutter={16}>
+                            <Col span={12}>
+                                <Input placeholder='网站名称'></Input>
+                            </Col>
+                            <Col span={12}>
+                                <Input placeholder='网站链接'></Input>
+                            </Col>
+                        </Row>
+                        <Row className='row' gutter={16}>
+                            <Col span={12}>
+                                <Input placeholder='网站描述'></Input>
+                            </Col>
+                            <Col span={12}>
+                                <Input placeholder='选择分类'></Input>
+                            </Col>
+                        </Row>
+                        <Row className='row'>
+                            <Col span={24}>
+                                <Input placeholder='网站关键字，请用英文逗号分隔'></Input>
+                            </Col>
+                        </Row>
+                        <div className='webIcon'>网站介绍：</div>
+                        <Row className='row'>
+                            <Col span={24}>
+                                <TextArea rows={4} placeholder=""></TextArea>
+                            </Col>
+                        </Row>
+                        <div className='button'>
+                            <Button type='primary' block>提交</Button>
+                        </div>
                     </div>
                 </div>
             </div>
