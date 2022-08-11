@@ -4,11 +4,12 @@ import Layout from "../../Components/Layout/index.jsx";
 import TopNav from "../../Components/TopNav/index.jsx";
 
 const FirstPage = () => {
+
     return (
-        <div>
+        <div className="FirstPage">
             <Layout/>
             <TopNav/>
-            
+
         </div>
     );
 };
