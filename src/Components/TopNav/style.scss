@@ -7,11 +7,12 @@
     position: fixed;
     top: 0;
     left: px(335);
-    transition: rgba(256,256,256,0.1);
+    background-color: rgba(256,256,256,0.75);
     display: flex;
     align-items: center;
     border-bottom: 1px solid #999999;
     justify-content: space-between;
+    z-index: 100;
     .CityAndWeather{
       cursor: pointer;
       margin-left: px(50);
@@ -20,7 +21,7 @@
       .Weather-GitHub{
         margin-left: px(50);
         text-decoration: none;
-        color: #888888;
+        color: #000000;
         font-size: 18px;
       }
     }
