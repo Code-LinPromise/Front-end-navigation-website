@@ -10,12 +10,12 @@ const Layout = () => {
         let Iele =document.querySelector(".inspiration-many-youjiantou")
         if(!isShowInsp){
             Iele.className="iconfont icon-shanglajiantou inspiration-many-youjiantou"
-            ele.style.display="block"
+            ele.id="Layout-Items-li-many-hover"
             setIsShowInsp(isShowInsp=>!isShowInsp)
         }
         else{
             Iele.className="iconfont icon-youjiantou inspiration-many-youjiantou"
-            ele.style.display="none"
+            ele.id=""
             setIsShowInsp(isShowInsp=>!isShowInsp)
 
         }
@@ -25,12 +25,12 @@ const Layout = () => {
         let Iele =document.querySelector(".Material-many-youjiantou")
         if(!isShowMaterial){
             Iele.className="iconfont icon-shanglajiantou Material-many-youjiantou"
-            ele.style.display="block"
+            ele.id="ShowMaterial-hover"
             setIsShowMaterial(isShowMaterial=>!isShowMaterial)
         }
         else{
             Iele.className="iconfont icon-youjiantou Material-many-youjiantou"
-            ele.style.display="none"
+            ele.id=""
             setIsShowMaterial(isShowMaterial=>!isShowMaterial)
 
         }
