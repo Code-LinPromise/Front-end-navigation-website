@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "antd": "^4.22.4",
     "axios": "^0.27.2",
     "qs": "^6.11.0",
     "qweather-icons": "^1.1.1",
