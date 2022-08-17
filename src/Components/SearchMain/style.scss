@@ -2,62 +2,100 @@
 
 .SearchMain{
   width: 86vw;
-  height: px(500);
+  height: px(650);
   position: fixed;
   left: px(335);
   top: 0;
   background-image: url("../../assets/pexels-philippe-donn-1169754.jpg");
   background-size: 100%  px(400);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .Toggle-Top{
+  .SearchMain-Toggle{
+    margin-top: px(250);
     display: flex;
-    .Toggle{
-      list-style: none;
-      color: #d1d1d0;
-      font-size: 18px;
-      padding-bottom: px(5);
-      margin: 0 px(30);
-      user-select: none;
-      cursor: pointer;
-      transition: all 0.3s;
-      position: relative;
+    justify-content: center;
+    .Toggle-Top{
+      display: flex;
+      .Toggle{
+        list-style: none;
+        color: #d1d1d0;
+        font-size: 18px;
+        padding-bottom: px(5);
+        margin: 0 px(30);
+        user-select: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: relative;
+      }
+      .Toggle:hover{
+        color: white;
+      }
+      .Toggle-usually:after, .Toggle-search:after, .Toggle-toggle:after,
+      .Toggle-community:after, .Toggle-life:after, .Toggle-work:after{
+        content: '';
+        height:px(6);
+        width: px(6);
+        border-radius: 50%;
+        position:absolute;
+        top: 30px;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: white;
+        transition: .3s;
+        opacity: 0;
+      }
+      #active:after{
+        opacity: 0;
+      }
+      .Toggle:hover:after{
+        opacity: 1;
+      }
     }
-    .Toggle:hover{
-      color: white;
-    }
-    .Toggle-usually:after, .Toggle-search:after, .Toggle-toggle:after,
-    .Toggle-community:after, .Toggle-life:after, .Toggle-work:after{
-      content: '';
-      height:px(6);
-      width: px(6);
-      border-radius: 50%;
-      position:absolute;
-      top: 30px;
-      left: 50%;
-      transform: translate(-50%,-50%);
+    .Toggle-scroll{
+      display: inline-block;
+      width: px(50);
+      height: px(8);
       background-color: white;
-      transition: .3s;
-      opacity: 0;
-    }
-    #active:after{
-      opacity: 0;
-    }
-    .Toggle:hover:after{
-      opacity: 1;
+      border-radius: 5px;
+      position: absolute;
+      top: px(295);
+      transition: all 0.3s;
     }
   }
-  .Toggle-scroll{
-    display: inline-block;
-    width: px(50);
-    height: px(8);
-    background-color: white;
-    border-radius: 5px;
-    position: absolute;
-    top: px(270);
-    left: px(680);
-    transition: all 0.3s;
+  .Toggle-From{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: px(1200);
+    height: px(70);
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: px(80);
+    .Toggle-input{
+      width: px(1200);
+      height: px(70);
+      border: none;
+      border-radius: 18px;
+      background-color: #000000;
+      color: #FFFFFF;
+      font-size: 18px;
+      padding-left: px(20);
+    }
+    .Toggle-input::placeholder{
+      color: #999999;
+    }
+    .Input-Submit{
+      display: flex;
+      align-items: center;
+      .Input-sousuo{
+        z-index: 100;
+        color: #FFFFFF;
+        position: absolute;
+        right: px(30);
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+
   }
+
 
 }
