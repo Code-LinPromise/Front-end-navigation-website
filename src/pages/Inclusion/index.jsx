@@ -3,7 +3,7 @@ import "./style.scss"
 import Layout from "../../Components/Layout/index.jsx";
 import TopNav from "../../Components/TopNav/index.jsx";
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
-import { message, Upload, Input, Col, Row, Button, Radio, Select } from 'antd';
+import { message, Upload, Input, Col, Row, Button, Radio, Select, Form } from 'antd';
 const { TextArea } = Input;
 const { Option } = Select;
 const children = [];
@@ -96,8 +96,18 @@ const options = [
 ]
 
 const Inclusion = () => {
+    const [form] = Form.useForm();
+    const [form1] = Form.useForm();
+    const [form2] = Form.useForm();
     const [loading, setLoading] = useState(false);
     const [imageUrl, setImageUrl] = useState();
+    const [imageUrl1, setImageUrl1] = useState();
+    const [imageUrl2, setImageUrl2] = useState();
+    const [imageUrl3, setImageUrl3] = useState();
+    const [Name, setName] = useState();
+    const [Link, setLink] = useState()
+    const [description, setDescription] = useState()
+    const [keyWord, setKeyword] = useState()
     const [option, setOption] = useState(1)
     const handleChange = (info) => {
         if (info.file.status === 'uploading') {
@@ -113,10 +123,58 @@ const Inclusion = () => {
             });
         }
     };
+    const handleChange1 = (info) => {
+        if (info.file.status === 'uploading') {
+            setLoading(true);
+            return;
+        }
+
+        if (info.file.status === 'done') {
+            // Get this url from response in real world.
+            getBase64(info.file.originFileObj, (url) => {
+                setLoading(false);
+                setImageUrl1(url);
+            });
+        }
+    };
+    const handleChange2 = (info) => {
+        if (info.file.status === 'uploading') {
+            setLoading(true);
+            return;
+        }
+
+        if (info.file.status === 'done') {
+            // Get this url from response in real world.
+            getBase64(info.file.originFileObj, (url) => {
+                setLoading(false);
+                setImageUrl2(url);
+            });
+        }
+    };
+    const handleChange3 = (info) => {
+        if (info.file.status === 'uploading') {
+            setLoading(true);
+            return;
+        }
+
+        if (info.file.status === 'done') {
+            // Get this url from response in real world.
+            getBase64(info.file.originFileObj, (url) => {
+                setLoading(false);
+                setImageUrl3(url);
+            });
+        }
+    };
     const onChange = ({ target: { value } }) => {
         console.log('radio checked', value);
+
         setOption(value);
     };
+    const onChangeWeb = (value) => {
+        console.log(value)
+        form.setFieldValue({ webOption: value })
+        console.log(form.getFieldValue({ name: webOption }))
+    }
     const uploadButton = (
         <div>
             {loading ? <LoadingOutlined /> : <PlusOutlined />}
@@ -135,111 +193,8 @@ const Inclusion = () => {
             return (
                 <div className='applymainPage'>
                     <div className='webIcon'>网站图标：</div>
-                    <Upload
-                        name="avatar"
-                        listType="picture-card"
-                        className="avatar-uploader"
-                        showUploadList={false}
-                        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                        beforeUpload={beforeUpload}
-                        onChange={handleChange}
-                    >
-                        {imageUrl ? (
-                            <img
-                                src={imageUrl}
-                                alt="avatar"
-                                style={{
-                                    width: '100%',
-                                }}
-                            />
-                        ) : (
-                            uploadButton
-                        )}
-                    </Upload>
-
-                    <Row className='row' gutter={16}>
-                        <Col span={12}>
-                            <Input placeholder='网站名称'></Input>
-                        </Col>
-                        <Col span={12}>
-                            <Input placeholder='网站链接'></Input>
-                        </Col>
-                    </Row>
-                    <Row className='row' gutter={16}>
-                        <Col span={12}>
-                            <Input placeholder='网站描述'></Input>
-                        </Col>
-                        <Col span={12}>
-                            {/* <Input placeholder='选择分类'></Input> */}
-                            <Select style={{ width: '100%' }} placeholder='选择分类' >
-                                {children}
-                            </Select>
-                        </Col>
-                    </Row>
-                    <Row className='row'>
-                        <Col span={24}>
-                            <Input placeholder='网站关键字，请用英文逗号分隔'></Input>
-                        </Col>
-                    </Row>
-                    <div className='webIcon'>网站介绍：</div>
-                    <Row className='row'>
-                        <Col span={24}>
-                            <TextArea rows={4} placeholder=""></TextArea>
-                        </Col>
-                    </Row>
-                    <div className='button'>
-                        <Button type='primary' block>提交</Button>
-                    </div>
-                </div>
-            )
-        }
-        else if (option == 2) {
-            return (
-                <div className='applymainPage'>
-                    <div className='webIcon'>公众号图标：</div>
-                    <Upload
-                        name="avatar"
-                        listType="picture-card"
-                        className="avatar-uploader"
-                        showUploadList={false}
-                        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                        beforeUpload={beforeUpload}
-                        onChange={handleChange}
-                    >
-                        {imageUrl ? (
-                            <img
-                                src={imageUrl}
-                                alt="avatar"
-                                style={{
-                                    width: '100%',
-                                }}
-                            />
-                        ) : (
-                            uploadButton
-                        )}
-                    </Upload>
-
-                    <Row className='row' gutter={16}>
-                        <Col span={12}>
-                            <Input placeholder='公众号名称'></Input>
-                        </Col>
-                        <Col span={12}>
-                            <Input placeholder='公众号链接'></Input>
-                        </Col>
-                    </Row>
-                    <Row className='row' gutter={16}>
-                        <Col span={12}>
-                            <Input placeholder='公众号描述'></Input>
-                        </Col>
-                        <Col span={12}>
-                            <Select style={{ width: '100%' }} placeholder='选择分类' >
-                                {children}
-                            </Select>
-                        </Col>
-                    </Row>
-                    <Row className='row'>
-                        <Col span={8}>
-                            <div className='webIcon'>公众号二维码：</div>
+                    <Form form={form}>
+                        <Form.Item name="upload">
                             <Upload
                                 name="avatar"
                                 listType="picture-card"
@@ -261,97 +216,260 @@ const Inclusion = () => {
                                     uploadButton
                                 )}
                             </Upload>
-                        </Col>
-                        <Col span={16}>
-                            <div className='webIcon'>网站介绍：</div>
-                            <TextArea rows={4} placeholder=""></TextArea>
-                        </Col>
-                    </Row>
+                        </Form.Item>
+                        <Row className='row' gutter={16}>
+                            <Col span={12}>
+                                <Form.Item name="webName">
+                                    <Input placeholder='网站名称'></Input>
+                                </Form.Item>
+                            </Col>
+                            <Col span={12}>
+                                <Form.Item name="webLink">
+                                    <Input placeholder='网站链接'></Input>
+                                </Form.Item>
+                            </Col>
+                        </Row>
+                        <Row className='row' gutter={16}>
+                            <Col span={12}>
+                                <Form.Item name="webDec">
+                                    <Input placeholder='网站描述' ></Input>
+                                </Form.Item>
+                            </Col>
+                            <Col span={12}>
+                                {/* <Input placeholder='选择分类'></Input> */}
+                                <Form.Item name="webOption">
+                                    <Select style={{ width: '100%' }} onChange={onChangeWeb} placeholder='选择分类' >
+                                        {children}
+                                    </Select>
+                                </Form.Item>
 
-                    <Row className='row'>
-                        <Col span={24}>
+                            </Col>
+                        </Row>
+                        <Row className='row'>
+                            <Col span={24}>
+                                <Form.Item name="webKeyWord">
+                                    <Input placeholder='网站关键字，请用英文逗号分隔'></Input>
+                                </Form.Item>
+                            </Col>
+                        </Row>
+                        <div className='webIcon'>网站介绍：</div>
+                        <Row className='row'>
+                            <Col span={24}>
+                                <Form.Item name="webIntroduction">
+                                    <TextArea rows={4} placeholder=""></TextArea>
+                                </Form.Item>
+                            </Col>
+                        </Row>
+                        <div className='button'>
+                            <Button type='primary' onClick={() => { console.log(form.getFieldsValue()) }} block>提交</Button>
+                        </div>
+                    </Form>
+                </div>
+            )
+        }
+        else if (option == 2) {
+            return (
+                <div className='applymainPage'>
+                    <div className='webIcon'>公众号图标：</div>
+                    <Form form={form1}>
+                        <Form.Item>
+                            <Upload
+                                name="upload1"
+                                listType="picture-card"
+                                className="avatar-uploader"
+                                showUploadList={false}
+                                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                                beforeUpload={beforeUpload}
+                                onChange={handleChange1}
+                            >
+                                {imageUrl1 ? (
+                                    <img
+                                        src={imageUrl1}
+                                        alt="avatar"
+                                        style={{
+                                            width: '100%',
+                                        }}
+                                    />
+                                ) : (
+                                    uploadButton
+                                )}
+                            </Upload>
+                        </Form.Item>
+                        <Row className='row' gutter={16}>
+                            <Col span={12}>
+                                <Form.Item name="publicName">
+                                    <Input placeholder='公众号名称'></Input>
+                                </Form.Item>
 
-                        </Col>
-                    </Row>
-                    <div className='button'>
-                        <Button type='primary' block>提交</Button>
-                    </div>
+                            </Col>
+                            <Col span={12}>
+                                <Form.Item name="publicLink">
+                                    <Input placeholder='公众号链接'></Input> F
+                                </Form.Item>
+
+                            </Col>
+                        </Row>
+                        <Row className='row' gutter={16}>
+                            <Col span={12}>
+                                <Form.Item name="publicDec">
+                                    <Input placeholder='公众号描述'></Input>
+                                </Form.Item>
+                            </Col>
+                            <Col span={12}>
+                                <Form.Item name="publicOption">
+                                    <Select style={{ width: '100%' }} placeholder='选择分类' >
+                                        {children}
+                                    </Select>
+                                </Form.Item>
+
+                            </Col>
+                        </Row>
+                        <Row className='row'>
+                            <Col span={8}>
+                                <div className='webIcon'>公众号二维码：</div>
+                                <Form.Item name="imageUrl2">
+                                    <Upload
+                                        name="imageUrl2"
+                                        listType="picture-card"
+                                        className="avatar-uploader"
+                                        showUploadList={false}
+                                        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                                        beforeUpload={beforeUpload}
+                                        onChange={handleChange2}
+                                    >
+                                        {imageUrl2 ? (
+                                            <img
+                                                src={imageUrl2}
+                                                alt="avatar"
+                                                style={{
+                                                    width: '100%',
+                                                }}
+                                            />
+                                        ) : (
+                                            uploadButton
+                                        )}
+                                    </Upload>
+                                </Form.Item>
+                            </Col>
+                            <Col span={16}>
+                                <div className='webIcon'>网站介绍：</div>
+                                <Form.Item>
+                                    <TextArea rows={4} placeholder=""></TextArea>
+                                </Form.Item>
+                            </Col>
+                        </Row>
+
+                        <div className='button'>
+                            <Button type='primary' block>提交</Button>
+                        </div>
+                    </Form>
+
                 </div>
             )
         } else if (option == 3) {
             return (
                 <div className='applymainPage'>
                     <div className='webIcon'>资源图标：</div>
-                    <Upload
-                        name="avatar"
-                        listType="picture-card"
-                        className="avatar-uploader"
-                        showUploadList={false}
-                        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                        beforeUpload={beforeUpload}
-                        onChange={handleChange}
-                    >
-                        {imageUrl ? (
-                            <img
-                                src={imageUrl}
-                                alt="avatar"
-                                style={{
-                                    width: '100%',
-                                }}
-                            />
-                        ) : (
-                            uploadButton
-                        )}
-                    </Upload>
+                    <Form form={form2}>
+                        <Form.Item name="imageUrl3">
+                            <Upload
+                                name="avatar"
+                                listType="picture-card"
+                                className="avatar-uploader"
+                                showUploadList={false}
+                                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                                beforeUpload={beforeUpload}
+                                onChange={handleChange3}
+                            >
+                                {imageUrl3 ? (
+                                    <img
+                                        src={imageUrl3}
+                                        alt="avatar"
+                                        style={{
+                                            width: '100%',
+                                        }}
+                                    />
+                                ) : (
+                                    uploadButton
+                                )}
+                            </Upload>
+                        </Form.Item>
 
-                    <Row className='row' gutter={16}>
-                        <Col span={12}>
-                            <Input placeholder='资源名称'></Input>
-                        </Col>
-                        <Col span={12}>
-                            <Input placeholder='资源描述'></Input>
-                        </Col>
-                    </Row>
-                    <Row className='row' gutter={16}>
-                        <Col span={12}>
-                            <Input placeholder='资源版本'></Input>
-                        </Col>
-                        <Col span={12}>
-                            <Input placeholder='官网链接'></Input>
-                        </Col>
-                    </Row>
-                    <Row className='row' gutter={16}>
-                        <Col span={12}>
-                            <Input placeholder='网盘链接'></Input>
-                        </Col>
-                        <Col span={12}>
-                            <Input placeholder='演示链接'></Input>
-                        </Col>
-                    </Row>
-                    <Row className='row' gutter={16}>
-                        <Col span={12}>
-                            <Input placeholder='网盘密码'></Input>
-                        </Col>
-                        <Col span={12}>
-                            <Input placeholder='解压密码'></Input>
-                        </Col>
-                    </Row>
-                    <Row className='row' gutter={16}>
-                        <Col span={12}>
-                            <Select style={{ width: '100%' }} placeholder='选择分类' >
-                                {children}
-                            </Select>
-                        </Col>
-                    </Row>
-                    <div className='webIcon'>资源介绍（使用说明）：</div>
-                    <Row className='row'>
-                        <Col span={24}>
-                            <TextArea rows={4} placeholder=""></TextArea>
-                        </Col>
-                    </Row>
-                    <div className='button'>
-                        <Button type='primary' block>提交</Button>
-                    </div>
+
+                        <Row className='row' gutter={16}>
+                            <Col span={12}>
+                                <Form.Item name="sourceName">
+                                    <Input placeholder='资源名称'></Input>
+                                </Form.Item>
+
+                            </Col>
+                            <Col span={12}>
+                                <Form.Item name="sourceDec">
+                                    <Input placeholder='资源描述'></Input>
+                                </Form.Item>
+
+                            </Col>
+                        </Row>
+                        <Row className='row' gutter={16}>
+                            <Col span={12}>
+                                <Form.Item name="sourceEdiion">
+                                    <Input placeholder='资源版本'></Input>
+                                </Form.Item>
+                            </Col>
+                            <Col span={12}>
+                                <Form.Item name="sourceLink">
+                                    <Input placeholder='官网链接'></Input>
+                                </Form.Item>
+
+                            </Col>
+                        </Row>
+                        <Row className='row' gutter={16}>
+                            <Col span={12}>
+                                <Form.Item name="netdiskLink">
+                                    <Input placeholder='网盘链接'></Input>
+                                </Form.Item>
+                            </Col>
+                            <Col span={12}>
+                                <Form.Item name="demonstrationLink">
+                                    <Input placeholder='演示链接'></Input>
+                                </Form.Item>
+                            </Col>
+                        </Row>
+                        <Row className='row' gutter={16}>
+                            <Col span={12}>
+                                <Form.Item name="netdiskPassword">
+                                    <Input placeholder='网盘密码'></Input>
+                                </Form.Item>
+
+                            </Col>
+                            <Col span={12}>
+                                <Form.Item name="decompressionPassword">
+                                    <Input placeholder='解压密码'></Input>
+                                </Form.Item>
+                            </Col>
+                        </Row>
+                        <Row className='row' gutter={16}>
+                            <Col span={12}>
+                                <Form.Item name="sourceOption">
+                                    <Select style={{ width: '100%' }} placeholder='选择分类' >
+                                        {children}
+                                    </Select>
+                                </Form.Item>
+                            </Col>
+                        </Row>
+                        <div className='webIcon'>资源介绍（使用说明）：</div>
+                        <Row className='row'>
+                            <Col span={24}>
+                                <Form.Item name="sourceIntroduction">
+                                    <TextArea rows={4} placeholder=""></TextArea>
+                                </Form.Item>
+                            </Col>
+                        </Row>
+                        <div className='button'>
+                            <Button type='primary' block>提交</Button>
+                        </div>
+                    </Form>
+
                 </div>
             )
         }
