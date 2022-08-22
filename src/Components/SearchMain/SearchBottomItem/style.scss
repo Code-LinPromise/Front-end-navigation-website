@@ -1,0 +1,25 @@
+@import "./src/Shared/helper";
+
+.SearchBottomItem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .Toggle-bottom-item{
+    list-style: none;
+    color: #d1d1d0;
+    font-size: 18px;
+    padding-bottom: px(5);
+    margin: 0 px(30);
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .Toggle-bottom-item:hover{
+    color: #FFFFFF;
+  }
+  .Toggle-bottom-item-active{
+    color: #FFFFFF;
+  }
+}

@@ -25,6 +25,9 @@
         transition: all 0.3s;
         position: relative;
       }
+      #active{
+        color: #FFFFFF;
+      }
       .Toggle:hover{
         color: white;
       }
@@ -85,6 +88,7 @@
     .Input-Submit{
       display: flex;
       align-items: center;
+      cursor: pointer;
       .Input-sousuo{
         z-index: 100;
         color: #FFFFFF;
@@ -94,6 +98,10 @@
         font-weight: 700;
       }
     }
+
+  }
+  .Toggle-Bottom{
+
 
   }
 
