@@ -1,19 +1,18 @@
-import React,{useEffect,useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import "./style.scss"
-import SearchBottomItem from "./SearchBottomItem/index.jsx";
 
-const SearchMain = () => {
+const SearchPage = (props) => {
+    const [whereNumber,setWhereNumber]=useState(0)
+    const {ShowSearchPage}=props
     const [inputDetails,setInputDetails]=useState("")
-    const Distance=[]
-    const [whoseArray,setWhoseArray]=useState(0)
-    const [domLeft,setDomLeft]=useState()
-    const [placeHolderNum,setPlaceHolderNum]=useState("0")
     const CommonlyUsed=["百度","Google","淘宝","Bing"]
     const Search=["百度","Google","360","搜狗","Bing","神马"]
     const Toggle=["权重查询","友链检测","备案查询","PING检测","死链检测","关键词挖掘"]
     const Community=["知乎","微信","微博","豆瓣","搜外问答"]
     const Life =["淘宝","京东","12306","去哪儿旅行"]
     const Work=["智联招聘","前程无忧","拉勾网","BOSS直聘"]
+    const  SumArray=[CommonlyUsed,Search,Toggle,Community,Life,Work]
+    const [placeHolderNum,setPlaceHolderNum]=useState("0")
     const placeHolderCommonlyUsed=[
         {placeholder:"百度一下",url:"https://www.baidu.com/s?wd=",name:"wd"},
         {placeholder:"Google",url:"https://www.google.com//search?q=",name:"q"},
@@ -58,63 +57,74 @@ const SearchMain = () => {
     const placeHolderName=[placeHolderCommonlyUsed,placeHolderSearch,placeHolderToggle,placeHolderCommunity,
         placeHolderLife,placeHolderWork
     ]
-    const  SumArray=[CommonlyUsed,Search,Toggle,Community,Life,Work]
-    useEffect(()=>{
-        let items=document.querySelectorAll(".Toggle")
-        let scroll=document.querySelector(".Toggle-scroll")
-        setDomLeft(items[0].offsetLeft)
-        for(let i=0;i<items.length;i++){
-            Distance.push(items[i].offsetLeft)
-            items[i].addEventListener("click",function (){
-                scroll.style.left=Distance[i]+"px"
-                setWhoseArray(i)
-                setPlaceHolderNum(0)
-                for(let i=0;i<items.length;i++){
-                    items[i].id=""
-                }
-                items[i].id="active"
-            })
-        }
-    },[])
-    function GetToggleBottomNum(number){
-        setPlaceHolderNum(number)
+
+    function GetValueNumber(){
+        let select =document.querySelector("#Selected")
+        setWhereNumber(select.value)
+        setPlaceHolderNum(0)
     }
     function IsNull(e){
-        let input =document.querySelector(".Toggle-input")
+        let input =document.querySelector(".SearchPage-Input")
         if(input.value===""){
             e.preventDefault()
         }
     }
+
+    useEffect(()=>{
+        let items= document.querySelectorAll(".SearchPage-Toggle-Item")
+        for(let i=0;i<items.length;i++){
+            items[i].style.color="#69727A"
+        }
+        items[0].style.color="#000000"
+        for(let i=0;i<items.length;i++){
+            items[i].addEventListener("click",function (){
+                setPlaceHolderNum(i)
+                for(let i=0;i<items.length;i++){
+                    items[i].style.color="#69727A"
+                }
+                items[i].style.color="#000000"
+            })
+        }
+    },)
+
     function RecordDetails(e){
         setInputDetails(e.target.value)
     }
     return (
-        <div className="SearchMain">
-           <div className="SearchMain-Toggle">
-               <ul className="Toggle-Top">
-                   <li className="Toggle-usually Toggle" id="active" >常用</li>
-                   <li className="Toggle-search Toggle">搜索</li>
-                   <li className="Toggle-toggle Toggle">工具</li>
-                   <li className="Toggle-community Toggle">社区</li>
-                   <li className="Toggle-life Toggle">生活</li>
-                   <li className="Toggle-work Toggle">求职</li>
-               </ul>
-               <span className="Toggle-scroll" style={{left:domLeft}}>
-            </span>
-           </div>
-            <form action={placeHolderName[whoseArray][placeHolderNum].url}  className="Toggle-From" method="get" target="_blank">
-                <input type="text" className="Toggle-input" placeholder={placeHolderName[whoseArray][placeHolderNum].placeholder} name={placeHolderName[whoseArray][placeHolderNum].name} autoComplete="off"
-                    onChange={RecordDetails}
-                />
-                <button type="submit" className="Input-Submit" onClick={IsNull}>
-                    <span className="iconfont icon-sousuo Input-sousuo"></span>
-                </button>
-            </form>
-            <div className="Toggle-Bottom">
-                <SearchBottomItem items={SumArray[whoseArray]} GetToggleBottomNum={GetToggleBottomNum}/>
+        <div className="SearchPage">
+            <div className="Center-Component">
+                <span className="iconfont icon-quxiao  Center-Component-quxiao " title="取消" onClick={ShowSearchPage}>
+                </span>
+                <div className="SearchPage-Choose-Toggle">
+                    <select name="" id="Selected" onChange={GetValueNumber}>
+                        <option value="0">常用</option>
+                        <option value="1">搜索</option>
+                        <option value="2">工具</option>
+                        <option value="3">社区</option>
+                        <option value="4">生活</option>
+                        <option value="5">求职</option>
+                    </select>
+                    <ul className="Selected-Toggle">
+                        {
+                            SumArray[whereNumber].map((item,index)=>{
+                                return  <li className="SearchPage-Toggle-Item"> {item}</li>
+                            })
+                        }
+                    </ul>
+                </div>
+                <form action={placeHolderName[whereNumber][placeHolderNum].url} className="SearchPage-Form" method="get" target="_blank">
+                    <input type="text" placeholder={placeHolderName[whereNumber][placeHolderNum].placeholder}
+                           name={placeHolderName[whereNumber][placeHolderNum].name} autoComplete="off"
+                           className="SearchPage-Input"
+                           onChange={RecordDetails}
+                    />
+                    <button type="submit" className="Input-Submit" onClick={IsNull}>
+                        <span className="iconfont icon-sousuo"></span>
+                    </button>
+                </form>
             </div>
         </div>
     );
 };
 
-export default SearchMain;
+export default SearchPage;

@@ -18,6 +18,7 @@ code {
 body {
   font-family: $font-hei;
   font-size: 16px;
+  overflow-x: hidden;
 }
 body::-webkit-scrollbar{
   width: 5px;

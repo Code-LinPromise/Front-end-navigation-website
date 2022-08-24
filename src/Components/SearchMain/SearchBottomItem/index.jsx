@@ -18,6 +18,7 @@ const SearchBottomItem = (props) => {
                 items[i].className="Toggle-bottom-item-active Toggle-bottom-item"
             })
         }
+
     })
     const {items,GetToggleBottomNum}=props
     return (
