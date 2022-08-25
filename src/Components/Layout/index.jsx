@@ -1,10 +1,15 @@
 import React ,{useState}from 'react';
 import "./style.scss"
 import Logo from "../../assets/Logo.jpg"
+import {useNavigate} from "react-router-dom"
 
 const Layout = () => {
+    const navigate=useNavigate()
     const [isShowInsp,setIsShowInsp]=useState(false)
     const [isShowMaterial,setIsShowMaterial]=useState(false)
+    function GoInclusion(){
+        navigate("/inclusion")
+    }
     function handleShowInspiration(){
         let ele =document.querySelector(".Layout-Items-li-many")
         let Iele =document.querySelector(".inspiration-many-youjiantou")
@@ -42,47 +47,47 @@ const Layout = () => {
             </div>
             <ul className="Layout-Items">
                 <li >
-                    <a href="#SearchMain-Here"><i className="iconfont icon-sousuo"></i>
+                    <a href="/#SearchMain-Here"><i className="iconfont icon-sousuo" ></i>
                         <span>搜索</span>
                     </a>
                 </li>
                 <li >
-                    <a href="#SparateFreame"><i className="iconfont icon-html"></i>
+                    <a href="/#SparateFreame"><i className="iconfont icon-html"></i>
                         <span>框架类库</span>
                     </a>
                 </li>
                 <li >
-                    <a href="#ProjectHosting"><i className="iconfont icon-github5"></i>
+                    <a href="/#ProjectHosting"><i className="iconfont icon-github5"></i>
                         <span>项目托管</span>
                     </a>
 
                 </li>
                 <li >
-                    <a href="#Community"> <i className="iconfont icon-shequ"></i>
+                    <a href="/#Community"> <i className="iconfont icon-shequ"></i>
                         <span>开发社区</span>
                     </a>
 
                 </li>
                 <li >
-                    <a href="#CMS"><i className="iconfont icon-cms-c"></i>
+                    <a href="/#CMS"><i className="iconfont icon-cms-c"></i>
                         <span>CMS程序</span>
                     </a>
 
                 </li>
                 <li >
-                    <a href="#FontIcon"><i className="iconfont icon-file-powerpoint"> </i>
+                    <a href="/#FontIcon"><i className="iconfont icon-file-powerpoint"> </i>
                         <span>字体图标</span>
                     </a>
 
                 </li>
                 <li >
-                    <a href="#IDE"><i className="iconfont icon-HTML-fill"></i>
+                    <a href="/#IDE"><i className="iconfont icon-HTML-fill"></i>
                         <span>IDE工具</span>
                     </a>
 
                 </li>
                 <li >
-                    <a href="#onlineClass"> <i className="iconfont icon-_kecheng"></i>
+                    <a href="/#onlineClass"> <i className="iconfont icon-_kecheng"></i>
                         <span>在线课堂</span>
                     </a>
 
@@ -136,8 +141,8 @@ const Layout = () => {
 
                 </li>
             </ul>
-            <div className="Layout-Record">
-                <a href="javascrpit:;">
+            <div className="Layout-Record" onClick={GoInclusion}>
+                <a href="">
                     <i className="iconfont icon-ceshishenqing"></i>
                     <span>申请收录</span>
                 </a>
