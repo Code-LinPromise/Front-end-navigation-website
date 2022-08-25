@@ -9,13 +9,13 @@ const Layout = () => {
         let ele =document.querySelector(".Layout-Items-li-many")
         let Iele =document.querySelector(".inspiration-many-youjiantou")
         if(!isShowInsp){
-            ele.id="Layout-Items-li-many-hover"
             Iele.className="iconfont icon-shanglajiantou inspiration-many-youjiantou"
+            ele.id="Layout-Items-li-many-hover"
             setIsShowInsp(isShowInsp=>!isShowInsp)
         }
         else{
-            ele.id=""
             Iele.className="iconfont icon-youjiantou inspiration-many-youjiantou"
+            ele.id=""
             setIsShowInsp(isShowInsp=>!isShowInsp)
 
         }
@@ -97,7 +97,7 @@ const Layout = () => {
                 </li>
                 <li className="Layout-Items-li-many">
                     <ul className="inspiration-many">
-                        <li c><a href="javascript:;">发现产品</a></li>
+                        <li><a href="javascript:;">发现产品</a></li>
                         <li><a href="javascript:;">界面灵感</a></li>
                         <li><a href="javascript:;">网页灵感</a></li>
                     </ul>

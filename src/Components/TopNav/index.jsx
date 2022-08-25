@@ -2,7 +2,8 @@ import React,{useEffect,useState} from 'react';
 import "./style.scss"
 import {randomNum} from "../../utils/RandomFunction.js"
 
-const TopNav = () => {
+const TopNav = (props) => {
+    const {ShowSearchPage}=props
     const [randomFont,setRandomFont]=useState("")
     const FontArray=[
         "人不光是靠他生来就拥有一切，而是靠他从学习中所得到的一切来造就自己。",
@@ -11,8 +12,10 @@ const TopNav = () => {
         "生活就是面对真实的微笑，就是越过障碍注视将来。",
         "从容地去度那生活，一直到饮尽了杯中最后一滴。",
         "天行健 君子以自强不惜 地势坤 君子以厚德载物",
-        "对昨天的悔恨最终只是囚禁了今天和明天。"
+        "对昨天的悔恨最终只是囚禁了今天和明天。",
+        "有的时候我真觉得全世界都像海上撞沉了船，最要紧的还是救出自己。"
     ]
+
 
     useEffect(()=>{
         setRandomFont(FontArray[randomNum(0,FontArray.length-1)])
@@ -53,7 +56,7 @@ const TopNav = () => {
                 </div>
                 <div className="FontAndSearch">
                     <strong>{randomFont}</strong>
-                    <span className="iconfont icon-sousuo TopNav-sousuo"></span>
+                    <span className="iconfont icon-sousuo TopNav-sousuo" onClick={ShowSearchPage} ></span>
                 </div>
             </div>
 

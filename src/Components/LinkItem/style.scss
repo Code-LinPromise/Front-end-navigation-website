@@ -1,0 +1,64 @@
+@import "./src/Shared/helper";
+
+.Link-Item {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 60px;
+  top: 550px;
+  left: 150px;
+  transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+  box-shadow: 0 4px 16px rgba(48, 55, 66, 0.15);
+  &:hover {
+    box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.15);
+    transform: translate(0,-5px);
+    transition-delay: 0s !important;
+  }
+
+  .Item-Body {
+    display: block;
+    width: 200px;
+    height: 60px;
+    background-color: whitesmoke;
+    border-radius: 3%;
+    color: #000;
+  
+    .Item-Avatar {
+      position: relative;
+      top: 15px;
+      width: 50px;
+      height: 50px;
+      margin-left: 20px;
+      font-size: 28px;
+    }
+    .Item-title {
+      position: absolute;
+      top: 15px;
+      left: 59px;
+      font-weight: 550;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    .Item-content {
+      position: absolute;
+      top: 32px;
+      left: 58px;
+      width: 120px;
+      font-size: 14px;
+      color:#a6a6a6;
+      overflow:hidden;
+	    text-overflow:ellipsis;
+	    white-space:nowrap
+    }
+
+    .Item-arrow {
+      position: absolute;
+      top: 26px;
+      width: 40px;
+      height: 40px;
+      left: 180px;
+      font-size: 14px;
+      opacity: 20%;
+    }
+  }
+}

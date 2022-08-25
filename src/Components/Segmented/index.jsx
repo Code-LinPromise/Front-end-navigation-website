@@ -23,12 +23,8 @@ const onClick = (setClickIndex) => {
         }
     }
 }
-const obj = [
-    '热门网址',
-    '大家喜欢',
-    '最新网址'
-]
-const Segmented = () => {
+const Segmented = (props) => {
+    const {obj}=props
     const [currentIndex, setCurrentIndex] = useState(0)
     const [refresh, setRefresh] = useState(false)
     const [clickIndex, setClickIndex] = useState(0)

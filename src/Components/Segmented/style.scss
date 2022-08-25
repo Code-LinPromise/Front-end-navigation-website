@@ -1,9 +1,8 @@
 $height: 35px;
+@import "./src/Shared/helper";
 .segment {
-  width: calc(100% - 17.44rem);
-  position: absolute;
-  left: 20rem;
-  top: 6rem;
+  width:86vw;
+
   overflow: hidden;
   height: $height;
   z-index: 1;
