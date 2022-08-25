@@ -1,8 +1,218 @@
 @import "./src/Shared/helper";
-.First-Segmented{
-  position:absolute;
-  left: px(360);
-  top: px(670);
+.FirstPage{
+  scroll-behavior: smooth;
+  .First-Segmented{
+    position:absolute;
+    left: px(380);
+    top: px(670);
+
+  }
+  .SparateFreame{
+    position:absolute;
+    left: px(380);
+    top: px(900);
+    span{
+      font-size: 20px;
+      margin-left: px(10);
+      color:#5F5F5F ;
+    }
+    .iconfont{
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+  .LinkItemHot{
+    position:absolute;
+    left: px(360);
+    top: px(750);
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        margin: px(15) px(30);
+        list-style: none;
+      }
+    }
+  }
+
+  .LinkItem-Frame{
+    position:absolute;
+    left: px(360);
+    top: px(950);
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        margin: px(15) px(30);
+        list-style: none;
+      }
+    }
+  }
+  .ProjectHosting{
+    position:absolute;
+    left: px(380);
+    top: px(1800);
+    span{
+      font-size: 20px;
+      margin-left: px(10);
+      color:#5F5F5F ;
+    }
+    .iconfont{
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+  .LinkItem-ProjectHosting{
+    position:absolute;
+    left: px(360);
+    top: px(1850);
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        margin: px(15) px(30);
+        list-style: none;
+      }
+    }
+  }
+  .Community{
+    position:absolute;
+    left: px(380);
+    top: px(2200);
+    span{
+      font-size: 20px;
+      margin-left: px(10);
+      color:#5F5F5F ;
+    }
+    .iconfont{
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+  .LinkItem-Community{
+    position:absolute;
+    left: px(360);
+    top: px(2250);
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        margin: px(15) px(30);
+        list-style: none;
+      }
+    }
+  }
+  .CMS{
+    position:absolute;
+    left: px(380);
+    top: px(2700);
+    span{
+      font-size: 20px;
+      margin-left: px(10);
+      color:#5F5F5F ;
+    }
+    .iconfont{
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+  .LinkItem-CMS{
+    position:absolute;
+    left: px(360);
+    top: px(2750);
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        margin: px(15) px(30);
+        list-style: none;
+      }
+    }
+  }
+  .FontIcon{
+    position:absolute;
+    left: px(380);
+    top: px(3750);
+    span{
+      font-size: 20px;
+      margin-left: px(10);
+      color:#5F5F5F ;
+    }
+    .iconfont{
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+  .LinkItem-FontIcon{
+    position:absolute;
+    left: px(360);
+    top: px(3800);
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        margin: px(15) px(30);
+        list-style: none;
+      }
+    }
+  }
+
+  .IDE{
+    position:absolute;
+    left: px(380);
+    top: px(4400);
+    span{
+      font-size: 20px;
+      margin-left: px(10);
+      color:#5F5F5F ;
+    }
+    .iconfont{
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+  .LinkItem-IDE{
+    position:absolute;
+    left: px(360);
+    top: px(4450);
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        margin: px(15) px(30);
+        list-style: none;
+      }
+    }
+  }
+
+  .onlineClass{
+    position:absolute;
+    left: px(380);
+    top: px(4800);
+    span{
+      font-size: 20px;
+      margin-left: px(10);
+      color:#5F5F5F ;
+    }
+    .iconfont{
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+  .LinkItem-onlineClass{
+    position:absolute;
+    left: px(360);
+    top: px(4850);
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        margin: px(15) px(30);
+        list-style: none;
+      }
+    }
+  }
 }
+
 
 

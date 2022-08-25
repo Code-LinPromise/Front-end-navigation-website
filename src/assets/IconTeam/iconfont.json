@@ -1,0 +1,30 @@
+{
+  "id": "3579814",
+  "name": "前端导航网站",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4933280",
+      "name": "标签2",
+      "font_class": "biaoqian",
+      "unicode": "e70f",
+      "unicode_decimal": 59151
+    },
+    {
+      "icon_id": "954218",
+      "name": "取消",
+      "font_class": "quxiao",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "3876518",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    }
+  ]
+}

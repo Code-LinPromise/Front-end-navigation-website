@@ -42,47 +42,47 @@ const Layout = () => {
             </div>
             <ul className="Layout-Items">
                 <li >
-                    <a href="javascript:;"><i className="iconfont icon-sousuo"></i>
+                    <a href="#SearchMain-Here"><i className="iconfont icon-sousuo"></i>
                         <span>搜索</span>
                     </a>
                 </li>
                 <li >
-                    <a href="javascript:;"><i className="iconfont icon-html"></i>
+                    <a href="#SparateFreame"><i className="iconfont icon-html"></i>
                         <span>框架类库</span>
                     </a>
                 </li>
                 <li >
-                    <a href="javascript:;"><i className="iconfont icon-github5"></i>
+                    <a href="#ProjectHosting"><i className="iconfont icon-github5"></i>
                         <span>项目托管</span>
                     </a>
 
                 </li>
                 <li >
-                    <a href="javascript:;"> <i className="iconfont icon-shequ"></i>
+                    <a href="#Community"> <i className="iconfont icon-shequ"></i>
                         <span>开发社区</span>
                     </a>
 
                 </li>
                 <li >
-                    <a href="javascript:;"><i className="iconfont icon-cms-c"></i>
+                    <a href="#CMS"><i className="iconfont icon-cms-c"></i>
                         <span>CMS程序</span>
                     </a>
 
                 </li>
                 <li >
-                    <a href="javascript:;"><i className="iconfont icon-file-powerpoint"> </i>
+                    <a href="#FontIcon"><i className="iconfont icon-file-powerpoint"> </i>
                         <span>字体图标</span>
                     </a>
 
                 </li>
                 <li >
-                    <a href="javascript:;"><i className="iconfont icon-HTML-fill"></i>
+                    <a href="#IDE"><i className="iconfont icon-HTML-fill"></i>
                         <span>IDE工具</span>
                     </a>
 
                 </li>
                 <li >
-                    <a href="javascript:;"> <i className="iconfont icon-_kecheng"></i>
+                    <a href="#onlineClass"> <i className="iconfont icon-_kecheng"></i>
                         <span>在线课堂</span>
                     </a>
 
