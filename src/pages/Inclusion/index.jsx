@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'antd/dist/antd.css'
 import "./style.scss"
 import Layout from "../../Components/Layout/index.jsx";
 import TopNav from "../../Components/TopNav/index.jsx";

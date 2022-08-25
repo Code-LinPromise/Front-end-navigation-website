@@ -16,7 +16,7 @@ const LinkItem = (props) => {
                     {itemContent}
                 </div>
                 <div className="Item-arrow">
-                    <Avatar icon={<RightCircleOutlined />} />
+                    <RightCircleOutlined style={{color:"#999999",fontSize:"16px"}} />
                 </div>
             </a>
         </div>
