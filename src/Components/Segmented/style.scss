@@ -1,0 +1,47 @@
+$height: 35px;
+@import "./src/Shared/helper";
+.segment {
+  width:86vw;
+
+  overflow: hidden;
+  height: $height;
+  z-index: 1;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    width: 250px;
+    border-radius: 15px;
+    border: 1px solid rgb(255, 255, 255);
+    height: $height;
+    background-color: rgb(224, 224, 224);
+    padding: 1px;
+    position: relative;
+    z-index: 1;
+    color: white;
+
+    li {
+      width: 33.33%;
+      text-align: center;
+      line-height: $height - 10px;
+      padding: 3px;
+      border-radius: 15px;
+      z-index: 3;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: rgb(67, 63, 77);
+      position: absolute;
+      width: 33.33%;
+      text-align: center;
+      height: $height - 4px;
+      left: 0;
+      padding: 3px;
+      border-radius: 15px;
+      color: white;
+      z-index: 2;
+    }
+  }
+}
