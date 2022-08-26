@@ -1,11 +1,90 @@
 
-export const hotWebSide=[
+export const HotUrl = [
     {
-        imageUrl:"https://api.iowen.cn/favicon/www.v2ex.com.png",
-        name:"V2EX",
-        details:"分享自己正在做的有趣事物、交流想法",
-        url:"https://www.v2ex.com/"
-    }
+        imageUrl: "http://img.webmuban.com/2020/10/udacity-wordmark-cn.png", name: "优达学城",
+        details: "Udacity是来自硅谷的前沿技术平台，为广大学子提供WEB前端开发、Python/JAVA编程、IOS/Android开发、人工智能开发等一系列在线课程及实战项目，满足学员灵活的学习需求", url: "https://learn-udacity.top/"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/www.v2ex.com.png", name: "V2EX",
+        details:"分享自己正在做的有趣事物、交流想法",url:"https://www.v2ex.com/"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/juejin.im.png", name: "掘金",
+        details:"帮助开发者成长的社区",url:"https://juejin.cn/"
+    },
+    {
+        imageUrl: "https://www.webmuban.com/wp-content/uploads/2020/10/gitlab-blog-cover.png", name: "Gitlab",
+        details:"创建免费的私有仓库",url:"https://about.gitlab.com/why-gitlab/?utm_medium=cpc&utm_source=google&utm_campaign=brand_apac_pr_rsa_br_phrase&utm_content=what-is-gitlab_digital_x-pr_english_&_bt=553407832207&_bk=gitlab&_bm=p&_bn=g&_bg=127307263086&gclid=EAIaIQobChMI8eKI2qfi-QIVA62WCh2xJA9jEAAYASAAEgI9tfD_BwE"
+    },
+    {
+        imageUrl: "https://www.webmuban.com/wp-content/uploads/2020/10/favicon-cd32144f74c18746f3dce33e1040e7dfe4c07c8e611e37f3868b1c16b5095da3.png", name: "TesterHome",
+        details:"TesterHome软件测试社区，人气最旺的软件测试技术门户，提供软件测试社区交流，测试沙龙",url:"https://testerhome.com/"
+    },
+    {
+        imageUrl: "https://www.cnblogs.com/images/logo.svg", name: "博客园",
+        details:"面向开发者的知识分享社区",url:"https://www.cnblogs.com/"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/cn.wordpress.org.png", name: "WordPress",
+        details:"全世界使用人数最多的内容管理程序",url:"http://wordpress.com"
+    },
+    {
+        imageUrl: "https://www.webmuban.com/wp-content/uploads/2020/10/TB1qNVdXlGw3KVjSZFDXXXWEpXa-620-620.png", name: "阿里云",
+        details:"230万用户正享用阿里云",url:"https://help.aliyun.com/"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/www.cmseasy.cn.png", name: "CmsEasy",
+        details:"企业网站管理系统",url:"https://www.cmseasy.cn/"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/www.pigcms.com.png", name: "小猪CMS",
+        details:"专业小程序 电商分销商城 O2O平台开发cms",url:"http://www.pigcms.com/"
+    },
+
+]
+
+export const likes = [
+    {
+        imageUrl: "https://api.iowen.cn/favicon/www.shiguangkey.com.png", name: "潭州课堂",
+        details:"潭州教育旗下的在线教育直播平台",url:"https://www.shiguangkey.com"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/ke.qq.com.png", name: "腾讯课堂",
+        details:"腾讯推出的专业职业培训在线教育平台",url:"https://ke.qq.com"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/www.ijh.cc.png", name: "江湖CMS",
+        details:"江湖科技IJH是O2O系统",url:"https://www.ijh.cc"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/www.itheima.com.png", name: "黑马程序员",
+        details:"传智播客旗下高端IT教育品牌",url:"http://www.itheima.com"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/xiaolvyun.baidu.com.png", name: "百度效率云平台",
+        details:"基于百度多年软件工程实践自主开发的DevOps解决方案",url:"http://xiaolvyun.baidu.com"
+    },
+    {
+        imageUrl: "https://www.webmuban.com/wp-content/uploads/2020/10/favicon-1-1.png", name: "百度云",
+        details:"计算无限可能",url:"https://cloud.baidu.com"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/jizhicms.cn.png", name: "极致CMS",
+        details:"免费开源的PHP建站CMS系统",url:"https://jizhicms.cn"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/forgraphictm.com.png", name: "For Graphic TM",
+        details:"High Quality PSD Mockups for Graphic Designers.",url:"http://forgraphictm.com"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/today.itjuzi.com.png", name: "Today",
+        details:"为身边的新产品喝彩",url:"http://today.itjuzi.com"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/www.baocms.com.png", name: "Baocms",
+        details:"BAOCMS是地方生活类O2O门户建站系统",url:"https://www.baocms.com"
+    },
+
 ]
 
 export const Frame = [
@@ -487,4 +566,64 @@ export const onlineClass = [
         imageUrl: "https://api.iowen.cn/favicon/huke88.com.png", name: "HTML中文网",
         details: "WEB前端开发在线学习视频教程", url: "https://www.html.cn/"
     },
+]
+
+export const feelCollect = [
+    {
+        imageUrl: "https://api.iowen.cn/favicon/faxian.appinn.com.png", name: "小众软件",
+        details:"在这里发现更多有趣的应用", url:"https://www.appinn.com/"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/today.itjuzi.com.png", name: "Today",
+        details:"为身边的新产品喝彩",url:"https://www.today.com/"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/liqi.io.png", name: "利器",
+        details:"创造者和他们的工具",url:"https://www.weblio.jp/content/%E5%88%A9%E5%99%A8"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/sspai.com.png", name: "少数派",
+        details:"高品质数字消费指南",url:"https://sspai.com/"
+    },
+    {
+        imageUrl: "https://api.iowen.cn/favicon/next.36kr.com.png", name: "NEXT",
+        details:"不错过任何一个新产品",url:"https://nextjs.org/"
+    },
+
+]
+
+export  const cloudServe = [
+    {
+        imageUrl: "https://api.iowen.cn/favicon/s.qiniu.com.png", name: "七牛云",
+        details:"",url:"qiniu.com   "
+    },
+    {
+        imageUrl: "https://img.webmuban.com/2020/11/未标题-1.jpg", name: "蓝队云",
+        details:"蓝队云-企业级云服务器提供商,为用户域名注册、虚拟主机、服务器租用托管、网站建设、网站备案等一站式服务,帮助企业及个人轻松上云。",url:"https://www.landui.com/ "
+    },
+    {
+        imageUrl: "https://www.webmuban.com/wp-content/uploads/2020/10/TB1qNVdXlGw3KVjSZFDXXXWEpXa-620-620.png", name: "阿里云",
+        details:"230万用户正享用阿里云",url:"https://help.aliyun.com/"
+    },
+    {
+        imageUrl: "https://www.webmuban.com/wp-content/uploads/2020/10/favicon.ico", name: "腾讯云",
+        details:"腾讯提供云服务",url:"https://cloud.tencent.com/"
+    },
+    {
+        imageUrl: "https://www.webmuban.com/wp-content/uploads/2020/10/favicon-1-1.png", name: "百度云",
+        details:"计算无限可能",url:"https://cloud.baidu.com/"
+    },
+    {
+        imageUrl: "https://www.webmuban.com/wp-content/uploads/2020/10/favicon-2.ico", name: "华为云",
+        details:"提供云计算服务 +智能，见未来",url:"https://www.huaweicloud.com/intl/zh-cn/"
+    },
+    {
+        imageUrl: "https://www.webmuban.com/wp-content/uploads/2020/10/西部数码.png", name: "西部数码",
+        details:"18年知名云计算服务提供商",url:"https://www.west.cn/"
+    },
+    {
+        imageUrl: "https://www.webmuban.com/wp-content/uploads/2020/10/硅云.ico", name: "硅云",
+        details:"领先的中立 基础云计算服务商",url:"https://www.vpsor.cn/"
+    },
+
 ]

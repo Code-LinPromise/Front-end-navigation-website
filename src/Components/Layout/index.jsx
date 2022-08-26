@@ -93,7 +93,7 @@ const Layout = () => {
 
                 </li>
                 <li onClick={handleShowInspiration} >
-                    <a href="javascript:;">
+                    <a href="/#InspirationGathering">
                         <i className="iconfont icon-lightbulb"></i>
                         <span>灵感采集</span>
                         <i className="iconfont icon-youjiantou inspiration-many-youjiantou"></i>
@@ -108,7 +108,7 @@ const Layout = () => {
                     </ul>
                 </li>
                 <li >
-                    <a href="javascript:;"><i className="iconfont icon-cloud-full"></i>
+                    <a href="/#cloudServe"><i className="iconfont icon-cloud-full"></i>
                         <span>云服务</span>
                     </a>
 
@@ -142,7 +142,7 @@ const Layout = () => {
                 </li>
             </ul>
             <div className="Layout-Record" onClick={GoInclusion}>
-                <a href="">
+                <a href="javascript:;">
                     <i className="iconfont icon-ceshishenqing"></i>
                     <span>申请收录</span>
                 </a>

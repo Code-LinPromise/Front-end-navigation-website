@@ -10,7 +10,7 @@
   .SparateFreame{
     position:absolute;
     left: px(380);
-    top: px(900);
+    top: px(1050);
     span{
       font-size: 20px;
       margin-left: px(10);
@@ -38,7 +38,7 @@
   .LinkItem-Frame{
     position:absolute;
     left: px(360);
-    top: px(950);
+    top: px(1100);
     ul{
       display: flex;
       flex-wrap: wrap;
@@ -51,7 +51,7 @@
   .ProjectHosting{
     position:absolute;
     left: px(380);
-    top: px(1800);
+    top: px(1950);
     span{
       font-size: 20px;
       margin-left: px(10);
@@ -65,7 +65,7 @@
   .LinkItem-ProjectHosting{
     position:absolute;
     left: px(360);
-    top: px(1850);
+    top: px(2000);
     ul{
       display: flex;
       flex-wrap: wrap;
@@ -78,7 +78,7 @@
   .Community{
     position:absolute;
     left: px(380);
-    top: px(2200);
+    top: px(2300);
     span{
       font-size: 20px;
       margin-left: px(10);
@@ -92,7 +92,7 @@
   .LinkItem-Community{
     position:absolute;
     left: px(360);
-    top: px(2250);
+    top: px(2350);
     ul{
       display: flex;
       flex-wrap: wrap;
@@ -105,7 +105,7 @@
   .CMS{
     position:absolute;
     left: px(380);
-    top: px(2700);
+    top: px(2800);
     span{
       font-size: 20px;
       margin-left: px(10);
@@ -119,7 +119,7 @@
   .LinkItem-CMS{
     position:absolute;
     left: px(360);
-    top: px(2750);
+    top: px(2850);
     ul{
       display: flex;
       flex-wrap: wrap;
@@ -132,7 +132,7 @@
   .FontIcon{
     position:absolute;
     left: px(380);
-    top: px(3750);
+    top: px(3850);
     span{
       font-size: 20px;
       margin-left: px(10);
@@ -146,7 +146,7 @@
   .LinkItem-FontIcon{
     position:absolute;
     left: px(360);
-    top: px(3800);
+    top: px(3900);
     ul{
       display: flex;
       flex-wrap: wrap;
@@ -160,7 +160,7 @@
   .IDE{
     position:absolute;
     left: px(380);
-    top: px(4400);
+    top: px(4500);
     span{
       font-size: 20px;
       margin-left: px(10);
@@ -174,7 +174,7 @@
   .LinkItem-IDE{
     position:absolute;
     left: px(360);
-    top: px(4450);
+    top: px(4550);
     ul{
       display: flex;
       flex-wrap: wrap;
@@ -188,7 +188,7 @@
   .onlineClass{
     position:absolute;
     left: px(380);
-    top: px(4800);
+    top: px(4900);
     span{
       font-size: 20px;
       margin-left: px(10);
@@ -202,7 +202,7 @@
   .LinkItem-onlineClass{
     position:absolute;
     left: px(360);
-    top: px(4850);
+    top: px(4950);
     ul{
       display: flex;
       flex-wrap: wrap;
@@ -212,7 +212,86 @@
       }
     }
   }
+  .InspirationGathering{
+    position:absolute;
+    left: px(380);
+    top: px(5400);
+    span{
+      font-size: 20px;
+      margin-left: px(10);
+      color:#5F5F5F ;
+    }
+    .iconfont{
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+  .InspirationGathering-Choose{
+    position:absolute;
+    left: px(380);
+    top: px(5475);
+  }
+  .LinkItem-feelCollect{
+    position:absolute;
+    left: px(360);
+    top: px(5550);
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        margin: px(15) px(30);
+        list-style: none;
+      }
+    }
+  }
+  .cloudServe{
+    position:absolute;
+    left: px(380);
+    top: px(5750);
+    span{
+      font-size: 20px;
+      margin-left: px(10);
+      color:#5F5F5F ;
+    }
+    .iconfont{
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+  .LinkItem-cloudServe{
+    position:absolute;
+    left: px(360);
+    top: px(5800);
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        margin: px(15) px(30);
+        list-style: none;
+      }
+    }
+  }
+  .Material{
+    position:absolute;
+    left: px(380);
+    top: px(6100);
+    span{
+      font-size: 20px;
+      margin-left: px(10);
+      color:#5F5F5F ;
+    }
+    .iconfont{
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+  .Material-Choose{
+    position:absolute;
+    left: px(380);
+    top: px(6175);
+  }
 }
+
 
 
 

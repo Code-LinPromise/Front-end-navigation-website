@@ -24,13 +24,18 @@ const onClick = (setClickIndex) => {
     }
 }
 const Segmented = (props) => {
-    const {obj}=props
+    const {obj,IsNumber}=props
     const [currentIndex, setCurrentIndex] = useState(0)
     const [refresh, setRefresh] = useState(false)
     const [clickIndex, setClickIndex] = useState(0)
     const el = useRef(null)
     const interval = useRef(null)
     const left = useRef(0)
+
+    function handleShift(e) {
+        console.log(e.target.index)
+        IsNumber(e.target.index)
+    }
     useEffect(() => {
         let end = currentIndex * 33;
         if (interval.current) {
@@ -64,7 +69,7 @@ const Segmented = (props) => {
                 onClick={onClick(setClickIndex)}>
                 {obj.map((item, index) => {
                     return (
-                        <li key={index} index={index}
+                        <li key={index} index={index} onClick={handleShift}
                             style={index == currentIndex ? {color: 'white'} : {color: 'rgb(136,136,136)'}}>{item}</li>
                     )
                 })}

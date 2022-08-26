@@ -7,7 +7,6 @@ import Inclusion from "../pages/Inclusion/index.jsx";
 const AppRoutes = () => {
     return (
         <BrowserRouter>
-
             <Routes>
                 <Route path="/" element={<FirstPage/>}></Route>
                 <Route path="/inclusion" element={<Inclusion/>}></Route>

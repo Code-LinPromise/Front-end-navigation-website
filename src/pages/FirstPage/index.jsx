@@ -6,11 +6,15 @@ import SearchMain from "../../Components/SearchMain/index.jsx";
 import Segmented from "../../Components/Segmented/index.jsx";
 import SearchPage from "../SearchPage/index.jsx";
 import LinkItem from "../../Components/LinkItem/index.jsx";
-import {hotWebSide,Frame,ProjectHosting,Community,CMS,FontIcon,IDE,onlineClass} from "../../assets/ArrayItem.js";
+import {HotUrl,Frame,ProjectHosting,Community,CMS,FontIcon,IDE,onlineClass,likes,feelCollect,cloudServe} from "../../assets/ArrayItem.js";
 const FirstPage = () => {
+    const [isNumber,setIsNumber]=useState(0)
     const [isShowSearchPage,setIsShowSearchPage]=useState(false)
     function ShowSearchPage(){
         setIsShowSearchPage(isShowSearchPage=>!isShowSearchPage)
+    }
+    function IsNumber(e){
+        setIsNumber(e)
     }
     return (
         <div className="FirstPage">
@@ -23,19 +27,32 @@ const FirstPage = () => {
                 <SearchMain/>
             </div>
             <div className="First-Segmented">
-                <Segmented obj={['热门网址', '大家喜欢', '最新网址']}/>
+                <Segmented obj={['热门网址', '大家喜欢', '最新网址']} IsNumber={IsNumber}/>
             </div>
-            <div className="LinkItemHot">
-                <ul>
-                    {
-                        hotWebSide.map((item,index)=>{
-                            return <li id={index===hotWebSide.length-1?"SparateFreame":""}>
-                                <LinkItem itemName={item.name} itemContent={item.details} itemIcon={item.imageUrl} itemUrl={item.url}/>
-                            </li>
-                        })
-                    }
-                </ul>
-            </div>
+            {
+                isNumber===0?<div className="LinkItemHot">
+                    <ul>
+                        {
+                            HotUrl.map((item,index)=>{
+                                return <li id={index===HotUrl.length-1?"SparateFreame":""}>
+                                    <LinkItem itemName={item.name} itemContent={item.details} itemIcon={item.imageUrl} itemUrl={item.url}/>
+                                </li>
+                            })
+                        }
+                    </ul>
+                </div>: <div className="LinkItemHot">
+                    <ul>
+                        {
+                            likes.map((item,index)=>{
+                                return <li id={index===likes.length-1?"SparateFreame":""}>
+                                    <LinkItem itemName={item.name} itemContent={item.details} itemIcon={item.imageUrl} itemUrl={item.url}/>
+                                </li>
+                            })
+                        }
+                    </ul>
+                </div>
+
+            }
             <div className="SparateFreame">
                 <span className="iconfont icon-biaoqian "></span>
                 <span>框架类库</span>
@@ -135,6 +152,41 @@ const FirstPage = () => {
                 <ul>
                     {
                         onlineClass.map((item,index)=>{
+                            return <li id={index===onlineClass.length-1?"InspirationGathering":""}>
+                                <LinkItem itemName={item.name} itemContent={item.details} itemIcon={item.imageUrl} itemUrl={item.url}/>
+                            </li>
+                        })
+                    }
+                </ul>
+            </div>
+
+            <div className="InspirationGathering">
+                <span className="iconfont icon-biaoqian "></span>
+                <span>灵感采集</span>
+            </div>
+            <div className="InspirationGathering-Choose">
+                <Segmented obj={["发现产品","灵感界面","网页灵感"]} />
+            </div>
+            <div className="LinkItem-feelCollect">
+                <ul>
+                    {
+                        feelCollect.map((item,index)=>{
+                            return <li id={index===feelCollect.length-1?"cloudServe":""}>
+                                <LinkItem itemName={item.name} itemContent={item.details} itemIcon={item.imageUrl} itemUrl={item.url}/>
+                            </li>
+                        })
+                    }
+                </ul>
+            </div>
+
+            <div className="cloudServe">
+                <span className="iconfont icon-biaoqian "></span>
+                <span>云服务</span>
+            </div>
+            <div className="LinkItem-cloudServe">
+                <ul>
+                    {
+                        cloudServe.map((item,index)=>{
                             return <li >
                                 <LinkItem itemName={item.name} itemContent={item.details} itemIcon={item.imageUrl} itemUrl={item.url}/>
                             </li>
@@ -142,6 +194,7 @@ const FirstPage = () => {
                     }
                 </ul>
             </div>
+
 
 
         </div>
